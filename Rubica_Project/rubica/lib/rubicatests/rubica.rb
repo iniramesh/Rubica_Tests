@@ -46,17 +46,11 @@ module Rubica
           enrollment_price = @driver.find_element(:xpath => "//label[@for='price']").text.match(/\d+/).to_s
           fail('price plans are not matching') unless price_plan.eql? enrollment_price
         when 'family'
-          price_plan = @driver.find_element(:xpath => "//div[@class='price-wrap' and contains(text(),'59.99/mo']").text
           @link = 'https://my.rubica.com/checkout/p/669b5ffa-da98-49b5-a48e-c811fae6d119'
           @driver.navigate.to(@link)
-          enrollment_price = @driver.find_element(:xpath => "//label[@for='price']).text]").text
-          fail('price plans are not matching') unless price_plan.eql? enrollment_price
         when 'team'
-          price_plan = @driver.find_element(:xpath => "//div[@class='price-wrap' and contains(text(),'249.99/mo']").text
           @link = 'https://my.rubica.com/checkout/p/1afd2897-c7c3-4ec8-a6f0-2d06cc48bfbe'
           @driver.navigate.to(@link)
-          enrollment_price = @driver.find_element(:xpath => "//label[@for='price']).text]").text
-          fail('price plans are not matching') unless price_plan.eql? enrollment_price
         when 'rubica_private_client'
           @driver..navigate.to('https://my.rubica.com/rubica-private-client').click
         else
